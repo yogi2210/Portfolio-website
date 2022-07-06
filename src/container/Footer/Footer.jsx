@@ -19,7 +19,28 @@ const Footer = () => {
       setFormData({...formData, [name]: value});
   }
 
+  // const handleSubmit = ()=>{
+  //   setLoading(true);
+
+  //   const contact = {
+  //     _type: 'contact',
+  //     name: name,
+  //     email:email,
+  //     message:message,
+  //   }
+
+  //   client.create(contact)
+  //     .then(()=>{
+  //       setLoading(false);
+  //       setIsFormSubmitted(true);
+  //     })
+
+
+  // }
+  // validation attempt
+  
   const handleSubmit = ()=>{
+    if(name && email){
     setLoading(true);
 
     const contact = {
@@ -34,9 +55,10 @@ const Footer = () => {
         setLoading(false);
         setIsFormSubmitted(true);
       })
-
-
+  }else{
+    alert("Please fill the required fields");
   }
+}
 
   return (
     <>
@@ -56,17 +78,18 @@ const Footer = () => {
       {!isFormSubmitted? 
         <div className="app__footer-form app__flex ">
             <div className="app__flex">
-              <input className='p-text' type='text' placeholder='Name' name='name' value={name} onChange={handleChangeInput} />
+              <input className='p-text' type='text' placeholder='Name*' name='name' value={name} required="required" onChange={handleChangeInput} />
             </div>
             <div className="app__flex">
-              <input className='p-text' type='email' placeholder='Email' name='email' value={email} onChange={handleChangeInput} />
+              <input className='p-text' type='email' placeholder='Email*' name='email' value={email} required onChange={handleChangeInput} />
             </div>
             <div>
               <textarea  
                 className='p-text'
-                placeholder='Message'
+                placeholder='Message*'
                 name='message'
                 value={message}
+                required
                 onChange={handleChangeInput}
               />
             </div>

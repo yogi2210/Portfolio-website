@@ -22,7 +22,7 @@ const Navbar = () => {
         ))}
       </ul>
       {/* for resume */}
-      <a className='resume_link' href='https://www.google.com/' target='_blank' >RESUME</a>
+      <a className='resume_link' href='https://app.luminpdf.com/viewer/62c531e06aaf4cf32cb923bb' target='_blank' >RESUME</a>
 
       <div className="app__navbar-menu">
           <HiMenuAlt4 onClick={()=> setToggle(true)}/>
@@ -41,7 +41,7 @@ const Navbar = () => {
                         </li>
                     ))}
                     {/* resume lnk */}
-                    <li><a className='resume_link-menu' href='https://www.google.com/' target='_blank' >RESUME</a></li>
+                    <li><a className='resume_link-menu' href='https://app.luminpdf.com/viewer/62c531e06aaf4cf32cb923bb' target='_blank' >RESUME</a></li>
                   </ul>
               </motion.div>
           )}
